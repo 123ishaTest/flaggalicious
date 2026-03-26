@@ -25,6 +25,7 @@
   const LayoutComponent = $derived(getLayout(puzzle.layout));
 
   let player = new PuzzlePlayer(puzzle);
+  let isSolved = $derived(player.isSolved());
   const progressManager = getContext<ProgressManager>('progressManager');
 
   const isAlreadyCompleted = $derived(progressManager.isLevelCompleted(pack.id, packIndex));
@@ -47,6 +48,9 @@
   function onDragEnd(event) {
     const source = event.operation.source.id;
     const target = event.operation.target?.id;
+    if (!target) {
+      return;
+    }
     const realTarget = target.split('/')[0];
     // console.log(`from ${source} to ${realTarget}`);
     player.selectColor(realTarget, source);
@@ -93,6 +97,13 @@
     <div class="border border-white">
       <LayoutComponent colors={player.selectedColors} />
     </div>
-    <ColorSelectorView {puzzle}></ColorSelectorView>
+
+    {#if isSolved}
+      <p class="my-10 text-center text-2xl font-bold text-white">
+        {puzzle.country}
+      </p>
+    {:else}
+      <ColorSelectorView {puzzle}></ColorSelectorView>
+    {/if}
   </div>
 </DragDropProvider>

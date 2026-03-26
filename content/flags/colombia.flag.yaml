@@ -1,0 +1,8 @@
+id: /flag/colombia
+country: Colombia
+hint: This country has a reputation for exporting cocaine
+layout: horizontal-tricolor-211
+solution:
+  top: gold
+  middle: blue-dark
+  bottom: red-dark

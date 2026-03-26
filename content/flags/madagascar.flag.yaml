@@ -1,0 +1,8 @@
+id: /flag/madagascar
+country: Madagascar
+hint: The largest African island
+layout: sidebar-bicolor
+solution:
+  left: white
+  top: red-dark
+  bottom: green

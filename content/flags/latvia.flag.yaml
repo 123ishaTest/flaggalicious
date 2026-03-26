@@ -1,0 +1,8 @@
+id: /flag/latvia
+country: Latvia
+hint: This country is often mention in combination with two other Balkan countries
+layout: horizontal-tricolor-small
+solution:
+  top: red-dark
+  middle: white
+  bottom: red-dark
