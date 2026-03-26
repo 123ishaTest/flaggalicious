@@ -1,16 +1,34 @@
 import { z } from 'zod';
 
-export const FlagColourSchema = z.enum(['red', 'white', 'blue', 'green']);
+export const FlagColourSchema = z.enum([
+  'black',
+  'white',
+
+  'gold',
+  'red-dark',
+  'red-light',
+  // 'blue',
+  // 'green',
+  // 'purple',
+  // 'orange',
+  // 'green-dark',
+  'blue-dark',
+  // 'blue-light',
+]);
 
 export type FlagColour = z.infer<typeof FlagColourSchema>;
 
 const colorMap: Record<FlagColour, string> = {
-  red: '#FF0000',
+  black: '#000000',
+  'red-dark': '#AE1C28',
+  'red-light': '#AE1C28',
   white: '#FFFFFF',
-  blue: '#0000FF',
-  green: '#00FF00',
+  'blue-dark': '#21468B',
+  gold: '#FFCE00',
+  // green: '#00FF00',
+  // purple: '#FF00FF',
 };
 
-export const getColor = (colorName: FlagColour): string => {
-  return colorMap[colorName]
-}
+export const getFlagColor = (colorName: FlagColour): string => {
+  return colorMap[colorName];
+};

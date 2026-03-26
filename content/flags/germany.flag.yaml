@@ -1,0 +1,12 @@
+id: /flag/germany
+country: Germany
+hint: 65% of the highways in this country have no speed limit
+layout: tricolor-horizontal
+solution:
+  top: black
+  middle: red-light
+  bottom: gold
+options:
+  - black
+  - red-light
+  - gold

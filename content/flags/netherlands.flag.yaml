@@ -1,0 +1,12 @@
+id: /flag/the-netherlands
+country: The Netherlands
+hint: This country is also known by two of its provinces
+layout: tricolor-horizontal
+solution:
+  top: red-dark
+  middle: white
+  bottom: blue-dark
+options:
+  - red-dark
+  - white
+  - blue-dark

@@ -1,0 +1,77 @@
+:root {
+  --white: #ffffff;
+  --black: #000000;
+  --blue-luminous: #3057e1;
+  --blue-luminous-transparant: #3057e1bb;
+  --blue-original: #4a6de5;
+  --blue-cream: #ced8f7;
+  --blue-tech-dark: #002082;
+
+  --font-proxima-nova: 'proxima-nova';
+
+  --background: var(--blue-original);
+  --line-color-thin: rgba(255, 255, 255, 0.1);
+  --line-color-thick: rgba(255, 255, 255, 0.2);
+
+  --surface: var(--blue-luminous);
+  --surface-transparant: var(--blue-luminous-transparant);
+  --text-primary: var(--white);
+
+  --header-color: var(--text-primary);
+  --title-color: var(--text-primary);
+
+  --font-primary: var(--font-proxima-nova);
+  --tw-prose-headings: var(--header-color);
+}
+
+@theme {
+  --color-blue-luminous: var(--blue-luminous);
+  --color-blue-luminous-transparant: var(--blue-luminous-transparant);
+  --color-blue-original: var(--blue-original);
+  --color-blue-cream: var(--blue-cream);
+}
+
+body {
+  font-family: var(--font-primary), serif;
+}
+
+.prose-isha {
+  --tw-prose-headings: var(--header-color);
+  --tw-prose-body: var(--text-primary);
+  --tw-prose-code: var(--text-primary);
+}
+
+.blueprint {
+  background-color: var(--background);
+  background-image:
+    linear-gradient(var(--line-color-thick) 2px, transparent 2px),
+    linear-gradient(90deg, var(--line-color-thick) 2px, transparent 1px),
+    linear-gradient(var(--line-color-thin) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-color-thin) 1px, transparent 1px);
+  background-size:
+    100px 100px,
+    100px 100px,
+    20px 20px,
+    20px 20px;
+  background-position: center center;
+}
+
+a {
+  color: var(--text-primary);
+}
+
+.link {
+  @apply underline;
+}
+
+@font-face {
+  font-family: 'proxima-nova';
+  font-weight: normal;
+  src: url('/fonts/ProximaNova/Proxima Nova Regular.ttf');
+}
+
+@font-face {
+  font-family: 'proxima-nova';
+  font-weight: bold;
+  src: url('/fonts/ProximaNova/Proxima Nova Semibold.ttf');
+}

@@ -9,8 +9,8 @@
   let { puzzle }: Props = $props();
 </script>
 
-<div class="grid grid-cols-8 gap-4">
-  {#each puzzle.options as color (color) }
-    <ColorDropletView colorName={color}/>
+<div class="grid grid-cols-4 gap-4">
+  {#each puzzle.options as color (color)}
+    <ColorDropletView colorName={color} />
   {/each}
 </div>

@@ -6,13 +6,14 @@
 
   let { data }: PageProps = $props();
 
-
   const contentManager = new ContentManager(schemas);
+  // svelte-ignore state_referenced_locally
   contentManager.load(data.content);
-  let puzzle = contentManager.get('/flag/netherlands', 'flag');
+
+  let puzzle = contentManager.get('/flag/germany', 'flag');
 </script>
 
-<div class="mb-4 flex flex-col space-y-2">
+<div class="flex flex-col space-y-2">
   {#each data.warnings as warning (warning.path)}
     <div role="alert" class="alert alert-warning">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
@@ -28,4 +29,6 @@
   {/each}
 </div>
 
-<FlagPuzzleView {puzzle}></FlagPuzzleView>
+<div class="flex h-full flex-row">
+  <FlagPuzzleView {puzzle}></FlagPuzzleView>
+</div>
