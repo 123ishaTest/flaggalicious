@@ -2,10 +2,14 @@
   import './layout.css';
   import FlaggaliciousLogo from '$lib/components/FlaggaliciousLogo.svelte';
   import LevelSelectionView from '$lib/components/LevelSelectionView.svelte';
+  import { setContext } from 'svelte';
+  import { ProgressManager } from '$lib/model/ProgressManager.svelte.ts';
 
   let { data, children } = $props();
 
   let levelPack = $derived(data.levelPack);
+
+  setContext('progressManager', new ProgressManager());
 </script>
 
 <div class="">

@@ -29,6 +29,7 @@
   --color-blue-luminous-transparant: var(--blue-luminous-transparant);
   --color-blue-original: var(--blue-original);
   --color-blue-cream: var(--blue-cream);
+  --color-blue-tech-dark: var(--blue-tech-dark);
 }
 
 body {

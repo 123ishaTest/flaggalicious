@@ -6,34 +6,50 @@
 
   import confetti from 'canvas-confetti';
   import { DragDropManager, PointerActivationConstraints, PointerSensor } from '@dnd-kit/dom';
-  import { ProgressManagerSvelte } from '$lib/model/ProgressManager.svelte.ts';
+  import { ProgressManager } from '$lib/model/ProgressManager.svelte.ts';
   import { PuzzlePlayer } from '$lib/model/PuzzlePlayer.svelte.ts';
+  import { getContext, onMount } from 'svelte';
+  import type { LevelPack } from '$lib/model/LevelPack.ts';
 
   interface Props {
+    pack: LevelPack;
     puzzle: FlagPuzzle;
   }
 
-  let { puzzle }: Props = $props();
+  let { pack, puzzle }: Props = $props();
+
+  // TODO(@Isha): Clean up, pass index and get puzzle from there?
+  //  Or only pass puzzle here and signal further up?
+  const packIndex = $derived(Object.keys(pack.levels).find((key) => pack.levels[key] === puzzle.id) ?? 'not-found');
 
   const LayoutComponent = $derived(getLayout(puzzle.layout));
 
-  // svelte-ignore state_referenced_locally
-  const player = new PuzzlePlayer(puzzle);
+  let player = new PuzzlePlayer(puzzle);
+  const progressManager = getContext<ProgressManager>('progressManager');
+
+  const isAlreadyCompleted = $derived(progressManager.isLevelCompleted(pack.id, packIndex));
+
+  $effect(() => {
+    player.loadPuzzle(puzzle);
+
+    if (isAlreadyCompleted) {
+      player.reveal();
+    }
+  });
+
+  onMount(() => {
+    return player.onSolve.subscribe(() => {
+      progressManager.completeLevel(pack.id, packIndex);
+      showConfetti();
+    });
+  });
 
   function onDragEnd(event) {
     const source = event.operation.source.id;
     const target = event.operation.target?.id;
     const realTarget = target.split('/')[0];
-    console.log(`from ${source} to ${realTarget}`);
+    // console.log(`from ${source} to ${realTarget}`);
     player.selectColor(realTarget, source);
-    checkForWin();
-  }
-
-  function checkForWin() {
-    if (!player.isSolved()) {
-      return;
-    }
-    showConfetti();
   }
 
   function showConfetti() {
@@ -68,10 +84,6 @@
       }),
     ],
   });
-
-  const progressManager = new ProgressManagerSvelte();
-
-  progressManager.completeLevel('asd', 'eveasd');
 </script>
 
 <DragDropProvider {onDragEnd} {manager}>

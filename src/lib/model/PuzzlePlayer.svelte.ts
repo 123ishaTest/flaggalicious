@@ -4,11 +4,16 @@ import type { FlagColor } from '$lib/model/FlagColor.ts';
 import { SimpleEventDispatcher } from 'strongly-typed-events';
 
 export class PuzzlePlayer {
-  private readonly _puzzle: FlagPuzzle;
-  private readonly _selectedColors: Record<string, FlagColor> = $state({});
+  private _puzzle: FlagPuzzle;
+  private _selectedColors: Record<string, FlagColor> = $state({});
 
   constructor(puzzle: FlagPuzzle) {
     this._puzzle = puzzle;
+  }
+
+  public loadPuzzle(puzzle: FlagPuzzle): void {
+    this._puzzle = puzzle;
+    this.clear();
   }
 
   public selectColor(region: string, color: FlagColor): void {
@@ -16,6 +21,10 @@ export class PuzzlePlayer {
       return;
     }
     this.setColor(region, color);
+
+    if (this.isSolved()) {
+      this._onSolve.dispatch(this._puzzle);
+    }
   }
 
   private setColor(region: string, color: FlagColor): void {
@@ -24,6 +33,17 @@ export class PuzzlePlayer {
 
   public isSolved(): boolean {
     return isEqual(this._selectedColors, this._puzzle.solution);
+  }
+
+  /**
+   * Reveal the answer
+   */
+  public reveal(): void {
+    this._selectedColors = this._puzzle.solution;
+  }
+
+  public clear() {
+    this._selectedColors = {};
   }
 
   get puzzle(): FlagPuzzle {

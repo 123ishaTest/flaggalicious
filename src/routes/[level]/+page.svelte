@@ -4,8 +4,9 @@
   let { data }: PageProps = $props();
 
   let puzzle = $derived(data.flag);
+  let pack = $derived(data.levelPack);
 </script>
 
 <div class="flex h-full flex-row">
-  <FlagPuzzleView {puzzle}></FlagPuzzleView>
+  <FlagPuzzleView {puzzle} {pack}></FlagPuzzleView>
 </div>

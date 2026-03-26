@@ -1,21 +1,19 @@
 import { localStore } from '$lib/util/LocalStore.svelte.ts';
 
-export class ProgressManagerSvelte {
+export class ProgressManager {
   private readonly _state: Record<string, Record<string, boolean>>;
   constructor() {
-    this._state = localStore('@123ishatest/flaggalicious', {
-      global: {},
-    }).value;
+    this._state = localStore('@123ishatest/flaggalicious', {}).value;
   }
 
-  public completeLevel(bundle: string, level: string): void {
-    if (!(bundle in this._state)) {
-      this._state[bundle] = {};
+  public completeLevel(pack: string, level: string): void {
+    if (!(pack in this._state)) {
+      this._state[pack] = {};
     }
-    this._state[bundle][level] = true;
+    this._state[pack][level] = true;
   }
 
-  public isLevelCompleted(bundle: string, level: string): boolean {
-    return this._state[bundle]?.[level] ?? false;
+  public isLevelCompleted(pack: string, level: string): boolean {
+    return this._state[pack]?.[level] ?? false;
   }
 }
