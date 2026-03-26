@@ -1,0 +1,8 @@
+id: /flag/estonia
+country: Estonia
+hint: This land used to be part of the USSR and lies close to Saint Petersburg
+layout: horizontal-tricolor
+solution:
+  top: blue-light
+  middle: black
+  bottom: white

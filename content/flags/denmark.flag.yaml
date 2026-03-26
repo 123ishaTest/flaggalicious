@@ -1,0 +1,7 @@
+id: /flag/denmark
+country: Denmark
+hint: The origin of LEGO
+layout: danish-cross
+solution:
+  cross: white
+  back: red-dark

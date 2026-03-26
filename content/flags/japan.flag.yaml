@@ -1,0 +1,7 @@
+id: /flag/japan
+country: Japan
+hint: The land of the rising sun
+layout: center-circle
+solution:
+  circle: red-dark
+  back: white

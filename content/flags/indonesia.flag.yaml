@@ -1,0 +1,7 @@
+id: /flag/indonesia
+country: Indonesia
+hint: This country consists of 17.508 islands
+layout: horizontal-bicolor
+solution:
+  top: red-dark
+  bottom: white

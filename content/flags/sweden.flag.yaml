@@ -1,0 +1,7 @@
+id: /flag/sweden
+country: Sweden
+hint: The land of Knäckebröd
+layout: swedish-cross
+solution:
+  cross: gold
+  back: blue-light

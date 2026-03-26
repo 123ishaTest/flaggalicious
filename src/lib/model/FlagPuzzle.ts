@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import { FlagLayoutSchema } from '$lib/model/FlagLayout.ts';
-import { FlagColourSchema } from '$lib/model/FlagColour.ts';
+import { FlagColorSchema } from '$lib/model/FlagColor.ts';
 
 export const FlagPuzzleSchema = z
   .strictObject({
@@ -9,8 +9,8 @@ export const FlagPuzzleSchema = z
     hint: z.string(),
     layout: FlagLayoutSchema,
 
-    options: z.array(FlagColourSchema),
-    solution: z.record(z.string(), FlagColourSchema),
+    options: z.array(FlagColorSchema).default(FlagColorSchema.options),
+    solution: z.record(z.string(), FlagColorSchema),
   })
   .refine(
     (flag) => {

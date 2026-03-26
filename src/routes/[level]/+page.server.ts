@@ -4,8 +4,6 @@ import { schemas } from '$lib/content/schemas.ts';
 import { LouterFileLoader } from '@123ishatest/louter/node';
 
 export const load: PageServerLoad = async ({ parent, params }) => {
-  console.log('isha');
-
   const data = await parent();
 
   const contentManager = new ContentManager(schemas);

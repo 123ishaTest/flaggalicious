@@ -1,7 +1,7 @@
-import type { PageServerLoad } from './$types';
 import { Louter, LouterValidator, LouterYamlParser } from '@123ishatest/louter';
 import { LouterFileLoader, LouterJsonSchemaWriter } from '@123ishatest/louter/node';
 import { schemas } from '$lib/content/schemas.ts';
+import type { PageServerLoad } from './[level]/$types';
 
 export const load: PageServerLoad = async () => {
   const louter = new Louter([
@@ -23,5 +23,6 @@ export const load: PageServerLoad = async () => {
   return {
     content: result.content,
     warnings: result.warnings,
+    levelPack: result.content.pack['/pack/global'],
   };
 };

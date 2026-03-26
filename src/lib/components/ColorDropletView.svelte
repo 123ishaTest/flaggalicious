@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { type FlagColour, getFlagColor } from '$lib/model/FlagColour.ts';
+  import { type FlagColor, getFlagColor } from '$lib/model/FlagColor.ts';
   import { createDraggable } from '@dnd-kit/svelte';
 
   interface Props {
-    colorName: FlagColour;
+    colorName: FlagColor;
   }
 
   let { colorName }: Props = $props();

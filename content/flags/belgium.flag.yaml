@@ -1,0 +1,8 @@
+id: /flag/belgium
+country: Belgium
+hint: Fries are thicker there and fried twice
+layout: vertical-tricolor
+solution:
+  left: black
+  middle: gold
+  right: red-dark

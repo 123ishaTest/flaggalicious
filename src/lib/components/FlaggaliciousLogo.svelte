@@ -4,4 +4,6 @@
   const logo = asset('/logo.png');
 </script>
 
-<img src={logo} alt="Flaggalicious" />
+<div class="max-w-96">
+  <img src={logo} alt="Flaggalicious" />
+</div>

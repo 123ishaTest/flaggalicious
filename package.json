@@ -45,6 +45,7 @@
     "@dnd-kit/svelte": "^0.3.2",
     "canvas-confetti": "^1.9.4",
     "es-toolkit": "^1.45.1",
+    "strongly-typed-events": "^3.0.11",
     "zod": "^4.3.6"
   }
 }

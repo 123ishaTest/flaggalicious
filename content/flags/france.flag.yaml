@@ -1,0 +1,8 @@
+id: /flag/france
+country: France
+hint: The capital of this country is also called the "City of Light"
+layout: vertical-tricolor
+solution:
+  left: blue-dark
+  middle: white
+  right: red-dark

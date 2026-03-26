@@ -1,0 +1,8 @@
+id: /flag/russia
+country: Russia
+hint: The biggest country in the world
+layout: horizontal-tricolor
+solution:
+  top: white
+  middle: blue-dark
+  bottom: red-dark

@@ -1,0 +1,8 @@
+id: /flag/italy
+country: Italy
+hint: This land completely encapsulates two other countries
+layout: vertical-tricolor
+solution:
+  left: green
+  middle: white
+  right: red-dark
