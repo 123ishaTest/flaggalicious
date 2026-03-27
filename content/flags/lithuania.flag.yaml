@@ -1,0 +1,8 @@
+id: /flag/lithuania
+country: Lithuania
+hint: This country contains the geographical center of Europe
+layout: horizontal-tricolor
+solution:
+  top: gold
+  middle: green
+  bottom: red-dark

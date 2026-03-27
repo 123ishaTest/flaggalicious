@@ -1,0 +1,8 @@
+id: /flag/luxembourg
+country: Luxembourg
+hint: This country has a trilingual education system
+layout: horizontal-tricolor
+solution:
+  top: red-dark
+  middle: white
+  bottom: blue-light

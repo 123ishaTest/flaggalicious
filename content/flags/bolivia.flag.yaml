@@ -1,0 +1,8 @@
+id: /flag/bolivia
+country: Bolivia
+hint: This country used to be a part of the Inca Empire
+layout: bolivia
+solution:
+  top: red-dark
+  middle: gold
+  bottom: green

@@ -1,0 +1,8 @@
+id: /flag/argentina
+country: Argentina
+hint: This country is named after the silver that was found there
+layout: argentina
+solution:
+  top: blue-light
+  middle: white
+  bottom: blue-light

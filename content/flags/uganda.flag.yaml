@@ -1,0 +1,11 @@
+id: /flag/uganda
+country: Uganda
+hint: Home country of Joseph Kony
+layout: uganda
+solution:
+  stripe1: black
+  stripe2: gold
+  stripe3: red-dark
+  stripe4: black
+  stripe5: gold
+  stripe6: red-dark

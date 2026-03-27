@@ -1,0 +1,8 @@
+id: /flag/yemen
+country: Yemen
+hint: This country used to be known as "Arabia Felix"
+layout: horizontal-tricolor
+solution:
+  top: red-dark
+  middle: white
+  bottom: black

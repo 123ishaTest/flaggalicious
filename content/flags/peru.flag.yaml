@@ -1,0 +1,8 @@
+id: /flag/peru
+country: Peru
+hint: This country contains Machu Pichu
+layout: peru
+solution:
+  left: red-dark
+  middle: white
+  right: red-dark

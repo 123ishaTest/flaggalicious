@@ -1,0 +1,9 @@
+id: /flag/united-arab-emirates
+country: United Arab Emirates
+hint: A gulf state where Jiu-Jitsu is the most popular sport
+layout: sidebar-tricolor
+solution:
+  left: red-dark
+  top: green
+  middle: white
+  bottom: black

@@ -1,0 +1,7 @@
+id: /flag/switzerland
+country: Switzerland
+hint: This country is famous for its watchmakers
+layout: square-cross
+solution:
+  cross: white
+  back: red-dark

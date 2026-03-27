@@ -1,0 +1,8 @@
+id: /flag/cote-d-ivoire
+country: Côte d'Ivoire
+hint: This country is named after the tusks of an elephant
+layout: vertical-tricolor
+solution:
+  left: orange
+  middle: white
+  right: green

@@ -1,0 +1,8 @@
+id: /flag/hungary
+country: Hungary
+hint: The home country of the composer Franz List
+layout: horizontal-tricolor
+solution:
+  top: red-dark
+  middle: white
+  bottom: green

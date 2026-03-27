@@ -1,0 +1,10 @@
+id: /flag/botswana
+country: Botswana
+hint: This country contains a part of the Kalahari desert
+layout: horizontal-31213
+solution:
+  top: blue-light
+  top-accent: white
+  middle: black
+  bottom-accent: white
+  bottom: blue-light

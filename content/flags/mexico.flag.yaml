@@ -1,0 +1,8 @@
+id: /flag/mexico
+country: Mexico
+hint: This country is known for its tasty food
+layout: mexico
+solution:
+  left: green
+  middle: white
+  right: red-dark

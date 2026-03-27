@@ -1,0 +1,8 @@
+id: /flag/bulgaria
+country: Bulgaria
+hint: The capital of this country is also a girls name
+layout: horizontal-tricolor
+solution:
+  top: white
+  middle: green
+  bottom: red-dark

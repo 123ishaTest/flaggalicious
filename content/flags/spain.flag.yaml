@@ -1,0 +1,8 @@
+id: /flag/spain
+country: Spain
+hint: This country hosts one of the three major road cycling races
+layout: spain
+solution:
+  top: red-dark
+  middle: gold
+  bottom: red-dark

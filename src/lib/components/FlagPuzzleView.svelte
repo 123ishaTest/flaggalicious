@@ -92,18 +92,22 @@
 
 <DragDropProvider {onDragEnd} {manager}>
   <div class="space-y-16 border-4 border-white bg-blue-luminous-transparant p-6 shadow-xl">
-    <p class="mt-10 text-center text-2xl font-bold text-white">{puzzle.hint}</p>
+    <p class="mt-10 h-16 text-center text-2xl font-bold text-white">{puzzle.hint}</p>
 
-    <div class="border border-white">
-      <LayoutComponent colors={player.selectedColors} />
+    <div class="flex h-64 flex-col justify-center">
+      <div class="border border-white">
+        <LayoutComponent colors={player.selectedColors} />
+      </div>
     </div>
 
-    {#if isSolved}
-      <p class="my-10 text-center text-2xl font-bold text-white">
-        {puzzle.country}
-      </p>
-    {:else}
-      <ColorSelectorView {puzzle}></ColorSelectorView>
-    {/if}
+    <div class="flex h-36 flex-col justify-center">
+      {#if isSolved}
+        <p class="text-center text-2xl font-bold text-white">
+          {puzzle.country}
+        </p>
+      {:else}
+        <ColorSelectorView {puzzle}></ColorSelectorView>
+      {/if}
+    </div>
   </div>
 </DragDropProvider>

@@ -1,0 +1,8 @@
+id: /flag/paraguay
+country: Paraguay
+hint: One of the two countries in South America that does not have a coastline
+layout: paraguay
+solution:
+  top: red-dark
+  middle: white
+  bottom: blue-dark

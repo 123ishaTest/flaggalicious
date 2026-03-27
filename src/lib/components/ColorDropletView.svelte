@@ -14,7 +14,7 @@
 </script>
 
 <div
-  class="flex h-16 w-16 cursor-pointer flex-col items-center justify-center border-2 border-white bg-blue-original p-2"
+  class="flex h-16 w-16 cursor-pointer flex-col items-center justify-center border-2 border-white bg-blue-700/60 p-2"
   {@attach draggable.attachHandle}
 >
   <svg viewBox="0 0 512 512" {@attach draggable.attach} style="outline: none">

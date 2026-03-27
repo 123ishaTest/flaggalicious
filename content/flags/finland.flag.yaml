@@ -1,0 +1,7 @@
+id: /flag/finland
+country: Finland
+hint: The land of a thousand lakes
+layout: finnish-cross
+solution:
+  cross: blue-dark
+  back: white

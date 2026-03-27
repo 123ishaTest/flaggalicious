@@ -1,0 +1,8 @@
+id: /flag/romania
+country: Romania
+hint: This flag used to contain a communist tool
+layout: vertical-tricolor
+solution:
+  left: blue-dark
+  middle: gold
+  right: red-dark
