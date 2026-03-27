@@ -5,7 +5,17 @@
   import { DragDropProvider } from '@dnd-kit/svelte';
 
   import confetti from 'canvas-confetti';
-  import { DragDropManager, PointerActivationConstraints, PointerSensor } from '@dnd-kit/dom';
+  import {
+    Accessibility,
+    Cursor,
+    DragDropManager,
+    Feedback,
+    PointerActivationConstraints,
+    PointerSensor,
+    PreventSelection,
+    Scroller,
+    ScrollListener,
+  } from '@dnd-kit/dom';
   import { ProgressManager } from '$lib/model/ProgressManager.svelte.ts';
   import { PuzzlePlayer } from '$lib/model/PuzzlePlayer.svelte.ts';
   import { getContext, onMount } from 'svelte';
@@ -91,7 +101,11 @@
   });
 </script>
 
-<DragDropProvider {onDragEnd} {manager}>
+<DragDropProvider
+  {onDragEnd}
+  {manager}
+  plugins={[Accessibility, Cursor, Feedback, PreventSelection, Scroller, ScrollListener]}
+>
   <div class="space-y-16 border-4 border-white bg-blue-luminous-transparant p-6 shadow-xl">
     <TitleHeading>{puzzle.hint}</TitleHeading>
     <div class="flex h-64 flex-col justify-center">
