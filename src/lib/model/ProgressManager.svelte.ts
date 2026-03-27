@@ -16,4 +16,10 @@ export class ProgressManager {
   public isLevelCompleted(pack: string, level: string): boolean {
     return this._state[pack]?.[level] ?? false;
   }
+
+  public nukeItAll(): void {
+    for (const key in this._state) {
+      delete this._state[key];
+    }
+  }
 }

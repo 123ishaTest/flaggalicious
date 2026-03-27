@@ -14,7 +14,7 @@
 <a
   href={resolve(`/[level]`, { level })}
   role="button"
-  class="flex h-16 w-16 cursor-pointer flex-col items-center justify-center border-2 border-white {bgColor} p-2 font-bold text-white"
+  class="flex h-16 w-16 cursor-pointer flex-col items-center justify-center border-2 border-white {bgColor} p-2 font-bold text-white hover:bg-blue-original"
 >
   {level}
 </a>

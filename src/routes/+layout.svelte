@@ -4,6 +4,7 @@
   import LevelSelectionView from '$lib/components/LevelSelectionView.svelte';
   import { setContext } from 'svelte';
   import { ProgressManager } from '$lib/model/ProgressManager.svelte.ts';
+  import CreditsView from '$lib/components/CreditsView.svelte';
 
   let { data, children } = $props();
 
@@ -42,13 +43,17 @@
   </div>
 
   <div class="flex flex-col items-center justify-center">
-    <div class="flex flex-col-reverse items-center md:flex-row md:space-x-16">
-      <div class="w-96 p-4">
+    <div class="flex flex-col items-center xl:flex-row xl:space-x-16">
+      <div class="order-1 w-96 p-4">
         <LevelSelectionView {levelPack}></LevelSelectionView>
       </div>
 
-      <div class="w-96 p-4">
+      <div class="order-first w-96 p-4 xl:order-2">
         {@render children()}
+      </div>
+
+      <div class="order-3 w-96 p-4">
+        <CreditsView />
       </div>
     </div>
   </div>

@@ -10,6 +10,7 @@
   import { PuzzlePlayer } from '$lib/model/PuzzlePlayer.svelte.ts';
   import { getContext, onMount } from 'svelte';
   import type { LevelPack } from '$lib/model/LevelPack.ts';
+  import TitleHeading from '$lib/components/TitleHeading.svelte';
 
   interface Props {
     pack: LevelPack;
@@ -92,8 +93,7 @@
 
 <DragDropProvider {onDragEnd} {manager}>
   <div class="space-y-16 border-4 border-white bg-blue-luminous-transparant p-6 shadow-xl">
-    <p class="mt-10 h-16 text-center text-2xl font-bold text-white">{puzzle.hint}</p>
-
+    <TitleHeading>{puzzle.hint}</TitleHeading>
     <div class="flex h-64 flex-col justify-center">
       <div class="border border-white">
         <LayoutComponent colors={player.selectedColors} />
