@@ -2,8 +2,33 @@ import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'vitest/config';
 import { sveltekit } from '@sveltejs/kit/vite';
 
-export default defineConfig({
-  plugins: [tailwindcss(), sveltekit()],
+export default defineConfig(({ mode }) => ({
+  plugins: [
+    {
+      name: 'simpleanalytics',
+      transformIndexHtml(html) {
+        console.log('AAAAAAAAAAAAAAAAAA');
+        const file = mode === 'development' ? 'latest.dev.js' : 'latest.js';
+        return {
+          html,
+          tags: [
+            {
+              tag: 'script',
+              attrs: {
+                async: true,
+                'data-collect-dnt': true,
+                src: `https://scripts.simpleanalyticscdn.com/${file}`,
+              },
+              injectTo: 'head',
+            },
+          ],
+        };
+      },
+    },
+
+    tailwindcss(),
+    sveltekit(),
+  ],
 
   server: {
     watch: {
@@ -24,4 +49,4 @@ export default defineConfig({
       },
     ],
   },
-});
+}));
