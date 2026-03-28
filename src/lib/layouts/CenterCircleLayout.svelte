@@ -43,7 +43,7 @@
   </defs>
 
   <rect
-    {@attach createDroppable({ id: 'back' }).attach}
+    {@attach createDroppable({ id: 'back', collisionPriority: -999 }).attach}
     fill={getColor('back')}
     stroke={getStroke('back')}
     clip-path="url(#clip)"
@@ -53,7 +53,7 @@
   />
 
   <circle
-    {@attach createDroppable({ id: 'circle' }).attach}
+    {@attach createDroppable({ id: 'circle', collisionPriority: 999 }).attach}
     fill={getColor('circle')}
     stroke={getStroke('circle')}
     stroke-width="10"
