@@ -8,7 +8,6 @@
   import {
     Accessibility,
     Cursor,
-    DragDropManager,
     Feedback,
     PointerActivationConstraints,
     PointerSensor,
@@ -88,22 +87,18 @@
       confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
     }, 250);
   }
-
-  const manager = new DragDropManager({
-    sensors: [
-      PointerSensor.configure({
-        activationConstraints: [
-          new PointerActivationConstraints.Distance({ value: 5 }),
-          new PointerActivationConstraints.Delay({ value: 200, tolerance: 10 }),
-        ],
-      }),
-    ],
-  });
 </script>
 
 <DragDropProvider
   {onDragEnd}
-  {manager}
+  sensors={[
+    PointerSensor.configure({
+      activationConstraints: [
+        new PointerActivationConstraints.Distance({ value: 5 }),
+        new PointerActivationConstraints.Delay({ value: 200, tolerance: 10 }),
+      ],
+    }),
+  ]}
   plugins={[Accessibility, Cursor, Feedback, PreventSelection, Scroller, ScrollListener]}
 >
   <div class="space-y-16 border-4 border-white bg-blue-luminous-transparant p-6 shadow-xl">
